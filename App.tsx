@@ -10,7 +10,7 @@ import {
 
 import AppRoutes from "./src/routes";
 import theme from "./src/config/theme";
-import { StatusBar } from "react-native";
+import { StatusBar, View } from "react-native";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -27,7 +27,14 @@ export default function App() {
     <>
       <StatusBar backgroundColor={theme.colors.backgroundColor[100]} />
       <ThemeProvider theme={theme}>
-        <AppRoutes />
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: theme.colors.backgroundColor[100],
+          }}
+        >
+          <AppRoutes />
+        </View>
       </ThemeProvider>
     </>
   );
