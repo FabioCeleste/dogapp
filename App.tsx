@@ -1,0 +1,34 @@
+import React from "react";
+import "react-native-gesture-handler";
+import { ThemeProvider } from "styled-components";
+import {
+  useFonts,
+  Spartan_400Regular,
+  Spartan_600SemiBold,
+  Spartan_700Bold,
+} from "@expo-google-fonts/spartan";
+
+import AppRoutes from "./src/routes";
+import theme from "./src/config/theme";
+import { StatusBar } from "react-native";
+
+export default function App() {
+  let [fontsLoaded] = useFonts({
+    Spartan_400Regular,
+    Spartan_600SemiBold,
+    Spartan_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <></>;
+  }
+
+  return (
+    <>
+      <StatusBar backgroundColor={theme.colors.backgroundColor[100]} />
+      <ThemeProvider theme={theme}>
+        <AppRoutes />
+      </ThemeProvider>
+    </>
+  );
+}
