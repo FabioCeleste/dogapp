@@ -11,6 +11,7 @@ import {
 import AppRoutes from "./src/routes";
 import theme from "./src/config/theme";
 import { StatusBar, View } from "react-native";
+import { Header } from "./src/components/Header";
 
 export default function App() {
   let [fontsLoaded] = useFonts({

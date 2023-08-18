@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { Heart, Logo } from "../assets/svg";
 import theme from "..//config/theme";
+import { Header } from "..//components/Header";
 
 const Tab = createBottomTabNavigator();
 
@@ -113,6 +114,7 @@ function MyTabBar({ state, descriptors, navigation }: any) {
                   ? theme.colors.primaryColor[500]
                   : theme.colors.textColor[100],
                 textAlign: "center",
+                fontFamily: theme.fonts.regular,
               }}
             >
               {label}
