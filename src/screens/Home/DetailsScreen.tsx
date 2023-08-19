@@ -9,7 +9,7 @@ export default function DetailsScreen() {
     <View
       style={{
         flex: 1,
-        backgroundColor: theme.colors.backgroundColor[500],
+        backgroundColor: theme.colors.backgroundColor[100],
       }}
     >
       <Header />

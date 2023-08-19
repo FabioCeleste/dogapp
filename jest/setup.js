@@ -16,6 +16,7 @@ jest.mock("react-native-reanimated", () => {
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 export const mockGoBack = jest.fn();
+export const mockNavigate = jest.fn();
 
 const routes = ["Home"];
 
@@ -25,6 +26,7 @@ jest.mock("@react-navigation/native", () => {
       return {
         getState: () => ({ routeNames: ["Home"], index: 0 }),
         canGoBack: () => (routes.length > 0 ? true : false),
+        navigate: mockNavigate,
         goBack: () => {
           routes.pop();
           mockGoBack();

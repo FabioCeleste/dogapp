@@ -8,13 +8,7 @@ import {
 } from "./styles";
 import theme from "../../config/theme";
 import { MagnifyingGlass } from "../../assets/svg";
-
-type SearchBarProps = {
-  isSearching: boolean;
-  setIsSearching: (value: boolean) => void;
-  searchInput: string;
-  setSearchInput: (value: string) => void;
-};
+import { SearchBarProps } from "../../types/components";
 
 export function SearchBar({
   isSearching,

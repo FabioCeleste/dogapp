@@ -1,6 +1,7 @@
+import { listAllBreedsRes } from "../types/services";
 import { DogCeoApiInstance, axiosRequest } from "../config/axiosClient";
 
-export const listAllBreeds = async () => {
+export const listAllBreeds = async (): Promise<listAllBreedsRes> => {
   try {
     const res = await axiosRequest(
       DogCeoApiInstance,
@@ -10,8 +11,10 @@ export const listAllBreeds = async () => {
       undefined
     );
 
-    return res.data;
+    return res as listAllBreedsRes;
   } catch (error) {
     console.log(error);
+
+    return { message: {} };
   }
 };

@@ -3,7 +3,7 @@ import { NavigatorScreenParams } from "@react-navigation/native";
 
 type HomeRoutes = {
   List: undefined;
-  Details: undefined;
+  Details: { breed: string; subBreed: string[] };
 };
 
 type AppRouterProps = {
