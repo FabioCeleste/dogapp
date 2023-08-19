@@ -1,6 +1,7 @@
 import React from "react";
-import { BackButton, HomeText, Container } from "./styles";
 import { useNavigation } from "@react-navigation/native";
+
+import { BackButton, HomeText, Container } from "./styles";
 import { AppRouter } from "../../types/routes";
 import { LeftArrow } from "../../assets/svg";
 import theme from "../../config/theme";
