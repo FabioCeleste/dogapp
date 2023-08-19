@@ -9,7 +9,7 @@
     "lint": "npx eslint --ext .tsx,.ts src/",
     "ts": "npx tsc --watch",
     "web": "expo start --web",
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "dependencies": {
     "@expo-google-fonts/spartan": "^0.2.2",
@@ -52,6 +52,9 @@
     ],
     "moduleNameMapper": {
       "\\.svg": "<rootDir>/__mocks__/svgMock.ts"
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ]
   }
 }

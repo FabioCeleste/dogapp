@@ -10,19 +10,23 @@ export function Header() {
 
   const state = nav.getState();
 
+  const handleClickBackButton = () => {
+    if (nav.canGoBack()) {
+      nav.goBack();
+    }
+  };
+
   return (
-    <Container>
+    <Container theme={theme}>
       <BackButton
-        onPress={() => {
-          if (nav.canGoBack()) {
-            nav.goBack();
-          }
-        }}
+        theme={theme}
+        onPress={() => handleClickBackButton()}
+        testID="backButton"
       >
         <LeftArrow width={28} height={28} fill={theme.colors.textColor[100]} />
       </BackButton>
 
-      <HomeText>{state.routeNames[state.index]}</HomeText>
+      <HomeText theme={theme}>{state.routeNames[state.index]}</HomeText>
     </Container>
   );
 }
