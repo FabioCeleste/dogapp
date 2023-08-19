@@ -27,19 +27,23 @@ export function SearchBar({
   };
 
   return (
-    <Container theme={theme}>
+    <Container>
       {isSearching ? (
         <SearchInput
           placeholder="Search"
           placeholderTextColor={theme.colors.textColor[700]}
           value={searchInput}
           onChangeText={(text) => setSearchInput(text)}
+          theme={theme}
         />
       ) : (
-        <SearchText>Breeds</SearchText>
+        <SearchText theme={theme}>Breeds</SearchText>
       )}
 
-      <MagnifyingGlassButton onPress={handleToogleInputSearch}>
+      <MagnifyingGlassButton
+        testID="magnifyingGlassButton"
+        onPress={handleToogleInputSearch}
+      >
         <MagnifyingGlass
           width={28}
           height={28}
