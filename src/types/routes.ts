@@ -1,13 +1,13 @@
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { NavigatorScreenParams } from "@react-navigation/native";
+import { NavigatorScreenParams, RouteProp } from "@react-navigation/native";
 
-type HomeRoutes = {
+export type HomeRoutesType = {
   List: undefined;
-  Details: { breed: string; subBreed: string[] };
+  Details: { breed: string; subBreed: string[]; breedAvatar: string };
 };
 
 type AppRouterProps = {
-  Home: NavigatorScreenParams<HomeRoutes>;
+  Home: NavigatorScreenParams<HomeRoutesType>;
   Favorites: undefined;
 };
 

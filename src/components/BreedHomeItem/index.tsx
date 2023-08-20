@@ -27,7 +27,7 @@ export function BreedHomeItem({ breed, subBreed }: BreedHomeItemProps) {
   const handleClickBreed = () => {
     nav.navigate("Home", {
       screen: "Details",
-      params: { breed, subBreed },
+      params: { breed, subBreed, breedAvatar: breedAvatarUrl as string },
     });
   };
 

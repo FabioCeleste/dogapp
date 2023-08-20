@@ -17,6 +17,7 @@ jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 export const mockGoBack = jest.fn();
 export const mockNavigate = jest.fn();
+export const setItemMock = jest.fn();
 
 const routes = ["Home"];
 
@@ -33,5 +34,31 @@ jest.mock("@react-navigation/native", () => {
         },
       };
     },
+
+    useRoute: () => {
+      return {
+        params: {
+          breed: "retriever",
+          subBreed: ["chesapeake", "curly", "flatcoated", "golden"],
+          breedAvatar:
+            "https://images.dog.ceo/breeds/retriever-golden/n02099601_2691.jpg",
+        },
+      };
+    },
+  };
+});
+
+jest.mock("@react-native-async-storage/async-storage", () => {
+  let favBreeds = "golden-chesapeake-curly-flatcoated";
+
+  return {
+    setItem: () => {
+      if (favBreeds.includes("-retriever")) {
+        favBreeds = "golden-chesapeake-curly-flatcoated";
+      } else {
+        favBreeds += "-retriever";
+      }
+    },
+    getItem: () => Promise.resolve(favBreeds),
   };
 });

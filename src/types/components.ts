@@ -10,3 +10,7 @@ export type BreedHomeItemProps = {
   subBreed: string[];
   searchInput: string;
 };
+
+export type ListBreedImagesDetailsProps = {
+  imgsUrls: string[];
+};
