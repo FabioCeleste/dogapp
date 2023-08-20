@@ -43,7 +43,7 @@ export default function ListScreen() {
         data={Object.keys(breedsList.message)}
         keyExtractor={(item) => item}
         renderItem={({ item }) => {
-          return item.includes(searchInput) ? (
+          return item.includes(searchInput.toLowerCase()) ? (
             <BreedHomeItem
               breed={item}
               subBreed={breedsList.message[item] || []}

@@ -11,6 +11,10 @@ export type BreedHomeItemProps = {
   searchInput: string;
 };
 
+export type FavoriteItemProps = {
+  breedName: string;
+};
+
 export type ListBreedImagesDetailsProps = {
   imgsUrls: string[];
 };

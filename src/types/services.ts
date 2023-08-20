@@ -9,7 +9,17 @@ export type getRandomImageByBreedRes = {
   status: string;
 };
 
+export type getRandomImageByBreedWithCountRes = {
+  message: string[];
+  status: string;
+};
+
 export type getAllImageByBreedRes = {
+  message: string[];
+  status: string;
+};
+
+export type listAllSubBreedRes = {
   message: string[];
   status: string;
 };

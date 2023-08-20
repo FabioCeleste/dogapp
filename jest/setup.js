@@ -49,7 +49,7 @@ jest.mock("@react-navigation/native", () => {
 });
 
 jest.mock("@react-native-async-storage/async-storage", () => {
-  let favBreeds = "golden-chesapeake-curly-flatcoated";
+  let favBreeds = "golden-chesapeake-curly-flatcoated-retriever";
 
   return {
     setItem: () => {

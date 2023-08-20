@@ -1,17 +1,13 @@
-import {
-  getAllImageByBreedRes,
-  getRandomImageByBreedRes,
-  listAllSubBreedRes,
-} from "../types/services";
+import { listAllSubBreedRes } from "../types/services";
 import { DogCeoApiInstance, axiosRequest } from "../config/axiosClient";
 
-export const getAllImageByBreed = async (
+export const listAllSubBreed = async (
   breed: string
 ): Promise<listAllSubBreedRes> => {
   try {
     const res = await axiosRequest(
       DogCeoApiInstance,
-      `breed/${breed}/images`,
+      `breed/${breed}/list`,
       undefined,
       undefined,
       undefined

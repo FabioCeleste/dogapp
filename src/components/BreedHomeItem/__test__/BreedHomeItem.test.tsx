@@ -1,9 +1,8 @@
-import { act, fireEvent, render, waitFor } from "@testing-library/react-native";
+import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import { BreedHomeItem } from "..";
 import React from "react";
 import { DogCeoApiInstance } from "../../../config/axiosClient";
 import { mockBreedImage } from "./mocks";
-import { SubBreedName } from "../styles";
 import { mockNavigate } from "../../../../jest/setup";
 
 describe("Breed Home Item", () => {
